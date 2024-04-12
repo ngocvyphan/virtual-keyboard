@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Virtual Keyboard</title>
+    <script>
+        /* function input(e) {
+             var tbInput = document.getElementById("tbInput");
+             tbInput.value = tbInput.value + e.value;
+         }
+ */
+        function del() {
+            var tbInput = document.getElementById("tbInput");
+            tbInput.value = tbInput.value.substr(0, tbInput.value.length - 1);
+        }
+
+        function display(value) {
+            document.getElementById("tbInput").value += value;
+        }
+
+        function calculate() {
+            var p = document.getElementById("tbInput").value;
+            var q = eval(p);
+            document.getElementById("tbInput").value = q;
+        }
+
+
+
+        /*
+        function load() {
+            var array = new Array();
+        
+            while (array.length < 10) {
+                var temp = Math.round(Math.random() * 9);
+                if (!contain(array, temp)) {
+                    array.push(temp);
+                }
+            }
+            for (i = 0; i < 10; i++) {
+                var btn = document.getElementById("btn" + i);
+                btn.value = array[i];
+            }
+        }
+        */
+
+    </script>
+</head>
+
+<body onload="load();">
+
+    <input id="tbInput" type="text" />
+
+    <div id="VirtualKey">
+        <input id="btn1" type="button" value="1" onclick="display('1')" />
+        <input id="btn2" type="button" value="2" onclick="display('2');" />
+        <input id="btn3" type="button" value="3" onclick="display('3')" />
+        <input id="btnAdd" type="button" value="+" onclick="display('+')" />
+        <br />
+        <input id="btn4" type="button" value="4" onclick="display('4')" />
+        <input id="btn5" type="button" value="5" onclick="display('5')" />
+        <input id="btn6" type="button" value="6" onclick="display('6')" />
+        <input id="btnMinus" type="button" value="-" onclick="display('-')" />
+        <br />
+        <input id="btn7" type="button" value="7" onclick="display('7')" />
+        <input id="btn8" type="button" value="8" onclick="display('8')" />
+        <input id="btn9" type="button" value="9" onclick="display('9')" />
+        <input id="btnMultiply" type="button" value="*" onclick="display('*')" />
+        <br />
+        <input id="btnPeriod" type="button" value="." onclick="display('.')" />
+        <input id="btn0" type="button" value="0" onclick="display('0')" />
+        <input id="btnEqual" type="button" value="=" onclick="calculate()" />
+        <input id="btnDivide" type="button" value="/" onclick="display('/')" />
+        <input id="btnDel" type="button" value="Backspace" onclick="del();" />
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
